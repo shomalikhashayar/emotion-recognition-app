@@ -1,0 +1,20 @@
+{
+  "login": {
+    "emotions": {
+      "anger": "خشم",
+      "happiness": "شادی",
+      "sadness": "غم",
+      "fear": "ترس",
+      "disgust": "انزجار",
+      "surprise": "هیجان"
+    },
+    "labels": {
+      "sign-in": "ورود",
+      "username": "نام کاربری",
+      "password": "رمز عبور",
+      "forgot-password": "رمز عبورتان را فراموش کرده‌اید؟",
+      "no-account": "حساب کاربری ندارید؟",
+      "sign-up": "ثبت نام"
+    }
+  }
+}

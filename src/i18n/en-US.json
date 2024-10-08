@@ -1,0 +1,20 @@
+{
+  "login": {
+    "emotions": {
+      "anger": "anger",
+      "happiness": "happiness",
+      "sadness": "sadness",
+      "fear": "fear",
+      "disgust": "disgust",
+      "surprise": "surprise"
+    },
+    "labels": {
+      "sign-in": "Sign In",
+      "username": "Username",
+      "password": "Password",
+      "forgot-password": "Forgot your password?",
+      "no-account": "Do you have account?",
+      "sign-up": "Sign Up"
+    }
+  }
+}

@@ -1,11 +1,9 @@
 <template>
- <div class="flex flex-center fullscreen">
+  <div class="row items-center justify-center window-height">
     <login />
- </div>
+  </div>
 </template>
 
 <script setup>
-
-import Login from "src/components/LoginPage/IndexView.vue"
-
+import Login from "src/components/LoginPage/IndexView.vue";
 </script>
