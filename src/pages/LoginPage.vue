@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import Login from "src/components/LoginPage/IndexView.vue";
+import Login from "src/components/login-page/IndexView.vue";
 </script>

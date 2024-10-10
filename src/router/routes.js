@@ -6,8 +6,8 @@ const routes = [
   },
   {
     path: "/dashboard",
-    component: () => import("layouts/Mainlayout.vue"),
-    children: [{ path: "", component: () => import("pages/InexPage.vue") }],
+    component: () => import("src/layouts/MainLayout.vue"),
+    children: [{ path: "", component: () => import("pages/DashboardPage.vue") }],
   },
 
   {

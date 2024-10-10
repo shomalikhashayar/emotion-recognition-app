@@ -2,6 +2,19 @@
 @import "/src/css/quasar.variables.scss";
 @import "/src/css/custom/index.scss";
 
-body {
+.body--light {
   background: #fff4ea;
+}
+
+.body--light .text-dark {
+  color: $dark !important;
+}
+
+.body--dark {
+  background: $dark-page;
+  --q-accent: $dark-page;
+}
+
+.body--dark .text-dark {
+  color: white !important;
 }
