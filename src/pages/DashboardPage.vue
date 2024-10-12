@@ -1,5 +1,5 @@
 <template>
-  textds
+  This is Dashborad.
 </template>
 
 <script setup>

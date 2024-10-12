@@ -5,19 +5,28 @@
     </div>
     <div class="row">
       <q-card class="login-card border-radius-xl">
-      <q-card-section horizontal class="no-padding fit">
-        <master-section />
-        <detail-section />
-      </q-card-section>
-    </q-card>
-    <emotions-list />
+        <q-card-section horizontal class="no-padding fit">
+          <master-section />
+          <detail-section />
+        </q-card-section>
+      </q-card>
+      <emotions-list />
     </div>
   </div>
 </template>
 
 <script setup>
+import { onMounted } from "vue";
+import { useQuasar } from "quasar";
+
 import MasterSection from "./MasterSection.vue";
 import DetailSection from "./DetailSection.vue";
 import EmotionsList from "./EmotionsList.vue";
 import LanguageSwitcher from "components/shared/LanguageSwitcher.vue";
+
+const $q = useQuasar();
+
+onMounted(() => {
+  $q.dark.set(false);
+});
 </script>

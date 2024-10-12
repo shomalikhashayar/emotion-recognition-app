@@ -23,6 +23,7 @@
           outlined
           rounded
           v-model="password"
+          color="primary"
         >
           <template #prepend>
             <q-icon color="primary" name="o_key" class="q-ml-sm" />
@@ -48,6 +49,7 @@
         color="primary"
         class="full-weight q-pa-md q-mt-xl"
         type="submit"
+        to="/dashboard"
       >
         <span class="text-body1 text-weight-700">{{
           $t("login.labels.sign-in")

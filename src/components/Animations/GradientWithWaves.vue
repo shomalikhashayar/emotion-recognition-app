@@ -1,7 +1,9 @@
 <template>
-  <div class="wave" :style="direction()"></div>
-  <div class="wave" :style="direction()"></div>
-  <div class="wave" :style="direction()"></div>
+  <div class="gradient-background">
+    <div class="wave" :style="direction()"></div>
+    <div class="wave" :style="direction()"></div>
+    <div class="wave" :style="direction()"></div>
+  </div>
 </template>
 
 <script setup>
@@ -10,18 +12,17 @@ import { useQuasar } from "quasar";
 const $q = useQuasar();
 
 const direction = () => {
-  if ($q.lang.rtl) {
-    return "left: 0";
-  } else {
-    return "left: 0";
-  }
+  return "left: 0";
 };
 </script>
 
-<style lang="scss">
-body {
-  margin: auto;
-  overflow: auto;
+<style lang="scss" scoped>
+.gradient-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(
     315deg,
     rgb(255, 85, 0) 3%,
@@ -31,7 +32,6 @@ body {
   );
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
-  background-attachment: fixed;
 }
 
 @keyframes gradient {

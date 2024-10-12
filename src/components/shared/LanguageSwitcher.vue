@@ -27,21 +27,21 @@
 </template>
 
 <script setup>
-import { useQuasar, Quasar, LocalStorage } from "quasar";
+import { useQuasar, Quasar } from "quasar";
 import { ref, watch, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
 const $t = useI18n();
 
 const qLangList = import.meta.glob(
-  "/node_modules/quasar/lang/(en-US|fa-IR).mjs"
+  "/node_modules/quasar/lang/(en-US|fa-IR).js"
 );
 
 const $q = useQuasar();
-const lang = ref(LocalStorage.getItem("selectedLanguage") || $q.lang.isoName);
+const lang = ref(localStorage.getItem("selectedLanguage") || $q.lang.isoName);
 
 const selectedLanguageClass =
-  LocalStorage.getItem("selectedLanguageClass") ||
+  localStorage.getItem("selectedLanguageClass") ||
   (lang.value === "fa-IR" ? "persian" : "english");
 const bodyClass = ref(selectedLanguageClass);
 
@@ -52,17 +52,17 @@ watch(lang, (val) => {
 watch(bodyClass, (val) => {
   document.body.classList.remove("persian", "english");
   document.body.classList.add(val);
-  LocalStorage.set("selectedLanguageClass", val);
+  localStorage.setItem("selectedLanguageClass", val);
 });
 
 async function setLang(iso) {
   try {
     const langModule = await qLangList[
-      `/node_modules/quasar/lang/${iso}.mjs`
+      `/node_modules/quasar/lang/${iso}.js`
     ]();
     Quasar.lang.set(langModule.default);
     $t.locale.value = lang.value;
-    LocalStorage.set("selectedLanguage", iso);
+    localStorage.setItem("selectedLanguage", iso);
     bodyClass.value = iso === "fa-IR" ? "persian" : "english";
   } catch (error) {
     console.log("error setLang", error);
