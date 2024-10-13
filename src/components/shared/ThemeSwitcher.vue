@@ -2,25 +2,11 @@
   <div class="row items-center q-gutter-md">
     <div class="col">
       <q-img src="images/day.svg" />
-      <q-radio
-        class="text-body2 q-mt-md"
-        dense
-        size="40px"
-        v-model="theme"
-        val="light"
-        label="روز"
-      />
+      <q-radio v-model="theme" val="light" label="روز" />
     </div>
     <div class="col">
       <q-img src="images/night.svg" />
-      <q-radio
-        class="text-body2 q-mt-md"
-        dense
-        size="40px"
-        v-model="theme"
-        val="dark"
-        label="شب"
-      />
+      <q-radio v-model="theme" val="dark" label="شب" />
     </div>
   </div>
 </template>
@@ -36,14 +22,8 @@ const themeLabel = computed(() =>
   $q.dark.isActive ? "Switch to Light Mode" : "Switch to Dark Mode"
 );
 
-const toggleTheme = () => {
-  $q.dark.toggle();
-  saveThemePreference();
-};
-
-const saveThemePreference = () => {
-  const isDarkMode = $q.dark.isActive;
-  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+const saveThemePreference = (newTheme) => {
+  localStorage.setItem("theme", newTheme);
 };
 
 const loadThemePreference = () => {
@@ -57,13 +37,13 @@ const loadThemePreference = () => {
   }
 };
 
-// Watch for changes in theme and update the Quasar dark mode accordingly
 watch(theme, (newTheme) => {
   if (newTheme === "dark") {
     $q.dark.set(true);
   } else {
     $q.dark.set(false);
   }
+  saveThemePreference(newTheme);
 });
 
 onMounted(() => {
