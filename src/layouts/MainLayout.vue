@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh Lpr lff">
+  <q-layout view="hHr LpR ffr">
     <main-header />
     <menu-drawer />
     <customization-drawer />
