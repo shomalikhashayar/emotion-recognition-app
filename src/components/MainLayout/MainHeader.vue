@@ -1,5 +1,10 @@
 <template>
-  <q-header bordered class="text-dark bg-accent" unelevated>
+  <q-header
+    bordered
+    class="text-on-dark"
+    :class="$q.dark.isActive ? 'bg-dark' : 'bg-accent'"
+    unelevated
+  >
     <q-toolbar class="q-py-sm">
       <q-btn
         flat
@@ -15,7 +20,7 @@
 
       <q-toolbar-title>هیجان یار</q-toolbar-title>
 
-      <theme-switcher />
+      <lang-switcher />
     </q-toolbar>
   </q-header>
 </template>
@@ -24,6 +29,7 @@
 import { ref } from "vue";
 import { useMenuDrawer } from "src/composables/useMenuDrawer";
 
+import LangSwitcher from "src/components/shared/LanguageSwitcher.vue";
 import ThemeSwitcher from "src/components/shared/ThemeSwitcher.vue";
 
 const store = useMenuDrawer();

@@ -1,8 +1,18 @@
 <template>
-  <q-drawer class="q-px-md q-pt-md" v-model="store.status.value">
+  <q-drawer
+    side="left"
+    id="menu"
+    bordered
+    width="260"
+    class="drawer-gradient q-px-md q-pt-md"
+    v-model="store.status.value"
+  >
     <q-item
+      id="menu-item"
+      dense
       class="q-mb-xs border-radius-xl"
-      active-class="text-black q-mb-sm bg-orange-2"
+      active-class="text-black q-mb-sm active-gradient"
+      style="padding-top: 4px; padding-bottom: 4px"
       clickable
       v-for="item in data"
       :key="item.to"

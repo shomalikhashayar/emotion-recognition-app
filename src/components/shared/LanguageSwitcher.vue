@@ -1,29 +1,21 @@
 <template>
-    <q-btn
-      style="width: 100px"
-      class="text-body1 text-white no-letter-spacing"
-      padding="6px 16px"
-      rounded
-      outline
-      unelevated
-      v-if="lang === 'fa-IR'"
-      @click="onLanguageChange"
-    >
-      فارسی
-    </q-btn>
+  <q-btn
+    dense
+    round
+    unelevated
+    v-if="lang == 'fa-IR'"
+    @click="onLanguageChange"
+  >
+    <q-avatar size="24px" unelevated>
+      <img src="flags/IR.svg" alt="Persian" />
+    </q-avatar>
+  </q-btn>
 
-    <q-btn
-      style="width: 100px"
-      class="text-body1 text-white no-letter-spacing"
-      padding="6px 16px"
-      rounded
-      outline
-      unelevated
-      v-else
-      @click="onLanguageChange"
-    >
-      English
-    </q-btn>
+  <q-btn dense round unelevated v-else @click="onLanguageChange">
+    <q-avatar size="24px" unelevated>
+      <img src="flags/US.svg" alt="English" />
+    </q-avatar>
+  </q-btn>
 </template>
 
 <script setup>
@@ -57,9 +49,7 @@ watch(bodyClass, (val) => {
 
 async function setLang(iso) {
   try {
-    const langModule = await qLangList[
-      `/node_modules/quasar/lang/${iso}.js`
-    ]();
+    const langModule = await qLangList[`/node_modules/quasar/lang/${iso}.js`]();
     Quasar.lang.set(langModule.default);
     $t.locale.value = lang.value;
     localStorage.setItem("selectedLanguage", iso);
