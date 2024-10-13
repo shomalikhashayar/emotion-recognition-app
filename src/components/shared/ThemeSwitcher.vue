@@ -2,11 +2,25 @@
   <div class="row items-center q-gutter-md">
     <div class="col">
       <q-img src="images/day.svg" />
-      <q-radio v-model="theme" val="light" label="روز" />
+      <q-radio
+        class="text-body2 q-mt-md"
+        dense
+        size="36px"
+        v-model="theme"
+        val="light"
+        label="روز"
+      />
     </div>
     <div class="col">
       <q-img src="images/night.svg" />
-      <q-radio v-model="theme" val="dark" label="شب" />
+      <q-radio
+        class="text-body2 q-mt-md"
+        dense
+        size="36px"
+        v-model="theme"
+        val="dark"
+        label="شب"
+      />
     </div>
   </div>
 </template>
