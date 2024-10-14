@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-const status = ref(true);
+const status = ref(false);
 
 export function useCustomizationDrawer() {
   const toggle = () => {
@@ -9,6 +9,6 @@ export function useCustomizationDrawer() {
 
   return {
     status,
-    toggle
+    toggle,
   };
 }

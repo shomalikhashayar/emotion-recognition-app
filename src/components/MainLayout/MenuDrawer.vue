@@ -24,7 +24,7 @@
         </q-avatar>
       </q-item-section>
 
-      <q-item-section class="text-body2 no-letter-spacing">
+      <q-item-section class="text-size-16 no-letter-spacing">
         {{ item.persianName }}
       </q-item-section>
     </q-item>

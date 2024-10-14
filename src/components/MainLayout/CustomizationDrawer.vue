@@ -8,7 +8,9 @@
     v-model="store.status.value"
   >
     <div class="row items-cetner justify-between q-mb-md">
-      <div class="text-weight-500 text-body1 no-letter-spacing">شخصی سازی</div>
+      <div class="text-weight-500 text-size-16 no-letter-spacing">
+        شخصی سازی
+      </div>
       <div>
         <q-btn
           round
@@ -24,15 +26,37 @@
     </div>
 
     <q-scroll-area style="height: calc(100% - 120px)">
-      <q-card flat bordered class="border-radius-lg">
-        <q-card-section>
-          <div class="text-body1 text-weight-500">حالت‌های رنگی</div>
-        </q-card-section>
+      <div class="q-gutter-y-sm">
+        <q-card flat bordered class="border-radius-lg">
+          <q-card-section>
+            <div class="text-size-16 text-weight-500">حالت‌های رنگی</div>
+          </q-card-section>
 
-        <q-card-section class="q-pt-none">
-          <theme-switcher />
-        </q-card-section>
-      </q-card>
+          <q-card-section class="q-pt-none">
+            <dark-mode-switcher />
+          </q-card-section>
+        </q-card>
+
+        <q-card flat bordered class="border-radius-lg">
+          <q-card-section>
+            <div class="text-size-16 text-weight-500">انتخاب رنگ</div>
+          </q-card-section>
+
+          <q-card-section class="q-pt-none">
+            <theme-switcher />
+          </q-card-section>
+        </q-card>
+
+        <q-card flat bordered class="border-radius-lg">
+          <q-card-section>
+            <div class="text-size-16 text-weight-500">اندازه متن</div>
+          </q-card-section>
+
+          <q-card-section class="q-pt-none">
+            <text-size-switcher />
+          </q-card-section>
+        </q-card>
+      </div>
     </q-scroll-area>
   </q-drawer>
 </template>
@@ -41,7 +65,9 @@
 import { ref } from "vue";
 import { useCustomizationDrawer } from "src/composables/useCustomizationDrawer";
 
+import DarkModeSwitcher from "src/components/shared/DarkModeSwitcher.vue";
 import ThemeSwitcher from "src/components/shared/ThemeSwitcher.vue";
+import TextSizeSwitcher from "src/components/shared/TextSizeSwitcher.vue";
 
 const store = useCustomizationDrawer();
 

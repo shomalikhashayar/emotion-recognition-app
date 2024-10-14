@@ -8,6 +8,6 @@
 </template>
 
 <script setup>
-import Login from "src/components/login-page/IndexView.vue";
+import Login from "src/components/LoginPage/IndexView.vue";
 import GradientWithWaves from "components/Animations/GradientWithWaves.vue";
 </script>

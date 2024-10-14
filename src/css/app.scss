@@ -1,62 +1,64 @@
 @import "/src/css/fonts/index.scss";
 @import "/src/css/quasar.variables.scss";
 @import "/src/css/custom/index.scss";
+@import "/src/css/themes/index.scss";
+@import "/src/css/text-sizes.scss";
 
-#menu-item {
-  padding: 8px 4px;
-}
+// #menu-item {
+//   padding: 8px 4px;
+// }
 
-.body--light {
-  background: #fff4ea;
-}
+// .body--light {
+//   background: #fff4ea;
+// }
 
-.body--light {
-  .text-on-dark {
-    color: $dark !important;
-  }
+// .body--light {
+//   .text-on-dark {
+//     color: $dark !important;
+//   }
 
-  .bg-on-dark {
-    background-color: white !important;
-  }
+//   .bg-on-dark {
+//     background-color: white !important;
+//   }
 
-  .active-gradient {
-    background: linear-gradient(-90deg, #ffdfcd, #ffc4a5);
-  }
+//   .active-gradient {
+//     background: linear-gradient(-90deg, #ffdfcd, #ffc4a5);
+//   }
 
-  .q-drawer--bordered {
-    border-right-color: #00000028 !important;
-    border-left-color: #00000028 !important;
-  }
+//   .q-drawer--bordered {
+//     border-right-color: #00000028 !important;
+//     border-left-color: #00000028 !important;
+//   }
 
-  .drawer-gradient {
-    background: linear-gradient(90deg, $accent, $accent) !important;
-  }
-}
+//   .drawer-gradient {
+//     background: linear-gradient(90deg, $accent, $accent) !important;
+//   }
+// }
 
-.body--dark {
-  background: $dark-page;
-  --q-accent: $dark-page;
-}
+// .body--dark {
+//   background: $dark-page;
+//   --q-accent: $dark-page;
+// }
 
-.body--dark {
-  .text-on-dark {
-    color: white !important;
-  }
+// .body--dark {
+//   .text-on-dark {
+//     color: white !important;
+//   }
 
-  .bg-on-dark {
-    background-color: $dark !important;
-  }
+//   .bg-on-dark {
+//     background-color: $dark !important;
+//   }
 
-  .active-gradient {
-    background: linear-gradient(-90deg, #ffdfcd, #ffc4a5);
-  }
+//   .active-gradient {
+//     background: linear-gradient(-90deg, #ffdfcd, #ffc4a5);
+//   }
 
-  .q-drawer--bordered {
-    border-right-color: #ffffff28 !important;
-    border-left-color: #ffffff28 !important;
-  }
+//   .q-drawer--bordered {
+//     border-right-color: #ffffff28 !important;
+//     border-left-color: #ffffff28 !important;
+//   }
 
-  .drawer-gradient {
-    background: linear-gradient(180deg, $dark, $dark-page) !important;
-  }
-}
+//   .drawer-gradient {
+//     background: linear-gradient(180deg, $dark, $dark-page) !important;
+//   }
+// }

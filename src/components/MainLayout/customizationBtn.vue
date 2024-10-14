@@ -12,7 +12,7 @@
         <q-avatar size="24px" class="q-mr-md">
           <img src="/icons/color-wheel.svg" alt="" />
         </q-avatar>
-        <div class="text-body1">شخصی سازی</div>
+        <div class="text-size-16">شخصی سازی</div>
       </div>
     </q-btn>
   </q-page-sticky>

@@ -1,0 +1,36 @@
+$themes: (
+  "orange": (
+    "primary": #ff5900,
+    "secondary": #26a69a,
+    "accent": #ffeee0,
+  ),
+  "green": (
+    "primary": #00b200,
+    "secondary": #2e8b57,
+    "accent": #5f9ea0,
+  ),
+  "blue": (
+    "primary": #007acc,
+    "secondary": #586599,
+    "accent": #a3acd2,
+  ),
+);
+
+@each $theme, $colors in $themes {
+  [data-theme="#{$theme}"] {
+    @each $name, $color in $colors {
+      .bg-#{$name} {
+        background: $color !important;
+      }
+
+      .text-#{$name} {
+        color: $color !important;
+      }
+    }
+
+    .q-field__control,
+    .q-item--active {
+      color: map-get($colors, primary) !important;
+    }
+  }
+}

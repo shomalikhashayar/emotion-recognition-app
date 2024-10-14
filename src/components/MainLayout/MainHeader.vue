@@ -30,7 +30,7 @@ import { ref } from "vue";
 import { useMenuDrawer } from "src/composables/useMenuDrawer";
 
 import LangSwitcher from "src/components/shared/LanguageSwitcher.vue";
-import ThemeSwitcher from "src/components/shared/ThemeSwitcher.vue";
+import ThemeSwitcher from "src/components/shared/DarkModeSwitcher.vue";
 
 const store = useMenuDrawer();
 </script>
