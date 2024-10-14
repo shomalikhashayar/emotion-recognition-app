@@ -1,0 +1,9 @@
+@mixin theme-dark {
+  --q-primary: #{$primary};
+  --q-secondary: #{$secondary};
+  --q-accent: #{$accent};
+  --q-dark: #{$dark-page};
+  background-color: $dark-page;
+
+  @include menu-drawer-dark();
+}

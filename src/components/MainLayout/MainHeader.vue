@@ -1,8 +1,7 @@
 <template>
   <q-header
     bordered
-    class="text-on-dark"
-    :class="$q.dark.isActive ? 'bg-dark' : 'bg-accent'"
+    :class="$q.dark.isActive ? 'bg-dark text-white' : 'bg-accent text-dark'"
     unelevated
   >
     <q-toolbar class="q-py-sm">

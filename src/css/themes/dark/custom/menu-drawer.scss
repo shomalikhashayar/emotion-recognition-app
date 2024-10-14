@@ -1,0 +1,5 @@
+@mixin menu-drawer-dark {
+  .drawer-gradient {
+    background: linear-gradient(180deg, $dark, $dark-page);
+  }
+}

@@ -1,0 +1,8 @@
+@mixin theme-light {
+  --q-primary: #{$primary};
+  --q-secondary: #{$secondary};
+  --q-accent: #{$accent};
+  background: $accent;
+  
+  @include menu-drawer-light();
+}

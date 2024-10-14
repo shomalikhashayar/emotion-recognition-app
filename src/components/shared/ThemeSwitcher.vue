@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from "vue";
 
 const setTheme = (color) => {
   document.body.setAttribute("data-theme", color);
@@ -42,9 +42,11 @@ const setTheme = (color) => {
 };
 
 onMounted(() => {
-  const cookieValue = document.cookie.split('; ').find(row => row.startsWith('theme='));
+  const cookieValue = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("theme="));
   if (cookieValue) {
-    const theme = cookieValue.split('=')[1];
+    const theme = cookieValue.split("=")[1];
     setTheme(theme); // Apply saved theme on mount
   }
 });

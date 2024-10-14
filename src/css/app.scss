@@ -1,8 +1,40 @@
 @import "/src/css/fonts/index.scss";
 @import "/src/css/quasar.variables.scss";
 @import "/src/css/custom/index.scss";
-@import "/src/css/themes/index.scss";
+@import "/src/css/themes/colors.scss";
 @import "/src/css/text-sizes.scss";
+
+// Light
+@import "/src/css/themes/light/custom/menu-drawer.scss";
+@import "/src/css/themes/light/index.scss";
+
+// Dark
+@import "/src/css/themes/dark/custom/menu-drawer.scss";
+@import "/src/css/themes/dark/index.scss";
+
+.body--light {
+  @include theme-light;
+}
+
+.body--dark {
+  @include theme-dark;
+}
+
+@each $name, $colors in $themes {
+  $primary: map-get($colors, primary);
+  $secondary: map-get($colors, secondary);
+  $accent: map-get($colors, accent);
+  $dark: map-get($colors, dark);
+  $dark-page: map-get($colors, dark-page);
+
+  .body--light[data-theme="#{$name}"] {
+    @include theme-light;
+  }
+
+  .body--dark[data-theme="#{$name}"] {
+    @include theme-dark;
+  }
+}
 
 // #menu-item {
 //   padding: 8px 4px;
@@ -30,9 +62,6 @@
 //     border-left-color: #00000028 !important;
 //   }
 
-//   .drawer-gradient {
-//     background: linear-gradient(90deg, $accent, $accent) !important;
-//   }
 // }
 
 // .body--dark {
@@ -58,7 +87,4 @@
 //     border-left-color: #ffffff28 !important;
 //   }
 
-//   .drawer-gradient {
-//     background: linear-gradient(180deg, $dark, $dark-page) !important;
-//   }
 // }

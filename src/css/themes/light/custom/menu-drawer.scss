@@ -1,0 +1,5 @@
+@mixin menu-drawer-light {
+  .drawer-gradient {
+    background: linear-gradient(90deg, $accent, $accent);
+  }
+}

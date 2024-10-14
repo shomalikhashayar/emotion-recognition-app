@@ -26,7 +26,7 @@
     </div>
 
     <q-scroll-area style="height: calc(100% - 120px)">
-      <div class="q-gutter-y-sm">
+      <div class="q-gutter-y-md">
         <q-card flat bordered class="border-radius-lg">
           <q-card-section>
             <div class="text-size-16 text-weight-500">حالت‌های رنگی</div>
