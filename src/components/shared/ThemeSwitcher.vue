@@ -1,44 +1,39 @@
 <template>
   <div class="row q-gutter-sm">
-    <div class="col">
+    <div class="col" v-for="(color, index) in colors" :key="index">
       <q-btn
         unelevated
-        class="text-size-16 no-letter-spacing full-width border-radius-lg"
+        class="text-size-16 no-letter-spacing fit border-radius-lg gradient-btn"
+        :style="`background: linear-gradient(${color.start}, ${color.end});`"
         padding="20px"
-        color="blue"
-        @click="setTheme('blue')"
-        >آبی</q-btn
+        @click="setTheme(color.name)"
       >
-    </div>
-    <div class="col">
-      <q-btn
-        unelevated
-        class="text-size-16 no-letter-spacing full-width border-radius-lg"
-        padding="20px"
-        color="orange"
-        @click="setTheme('orange')"
-        >نارنجی</q-btn
-      >
-    </div>
-    <div class="col">
-      <q-btn
-        unelevated
-        class="text-size-16 no-letter-spacing full-width border-radius-lg"
-        padding="20px"
-        color="green"
-        @click="setTheme('green')"
-        >سبز</q-btn
-      >
+        <q-icon
+          color="white"
+          name="check"
+          size="24px"
+          v-if="currentTheme === color.name"
+        />
+      </q-btn>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
+
+const colors = [
+  { name: "blue", label: "آبی", start: "#32a2ff", end: "#0082ff" },
+  { name: "orange", label: "نارنجی", start: "#FF9800", end: "#ff7600" },
+  { name: "green", label: "سبز", start: "#4CAF50", end: "#319900" },
+];
+
+const currentTheme = ref("blue");
 
 const setTheme = (color) => {
+  currentTheme.value = color;
   document.body.setAttribute("data-theme", color);
-  document.cookie = `theme=${color}; path=/; max-age=${60 * 60 * 24 * 30}`; // Save cookie for 30 days
+  document.cookie = `theme=${color}; path=/; max-age=${60 * 60 * 24 * 30}`;
 };
 
 onMounted(() => {
@@ -47,7 +42,8 @@ onMounted(() => {
     .find((row) => row.startsWith("theme="));
   if (cookieValue) {
     const theme = cookieValue.split("=")[1];
-    setTheme(theme); // Apply saved theme on mount
+    currentTheme.value = theme;
+    setTheme(theme);
   }
 });
 </script>
