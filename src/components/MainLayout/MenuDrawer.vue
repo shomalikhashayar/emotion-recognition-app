@@ -11,7 +11,11 @@
       id="menu-item"
       dense
       class="q-mb-xs border-radius-xl"
-      active-class="text-black q-mb-sm active-gradient"
+      :active-class="
+        $q.dark.isActive
+          ? 'text-white q-mb-sm active-gradient'
+          : 'text-dark q-mb-sm active-gradient'
+      "
       style="padding-top: 4px; padding-bottom: 4px"
       clickable
       v-for="item in data"

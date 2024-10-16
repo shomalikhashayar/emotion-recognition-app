@@ -16,14 +16,14 @@ $text-size-options: (
         &.q-field--dense {
           .q-field__control,
           .q-field__marginal {
-            height: (46px * $multiplier) / 4;
+            height: calc((46px * $multiplier) / 4);
             font-size: 16px * $multiplier;
             line-height: 23px * $multiplier;
           }
         }
 
         .q-field__label {
-          top: (46 *  $multiplier) px;
+          top: calc((46 * $multiplier)) px;
         }
       }
     }

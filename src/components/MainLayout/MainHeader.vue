@@ -19,7 +19,12 @@
 
       <q-toolbar-title>هیجان یار</q-toolbar-title>
 
-      <lang-switcher />
+       <div class="row items-center q-gutter-sm">
+         <profile />
+        <lang-switcher />
+        <notification />
+       </div>
+
     </q-toolbar>
   </q-header>
 </template>
@@ -29,6 +34,8 @@ import { ref } from "vue";
 import { useMenuDrawer } from "src/composables/useMenuDrawer";
 
 import LangSwitcher from "src/components/shared/LanguageSwitcher.vue";
+import Notification from "src/components/shared/ToolbarNotification.vue";
+import Profile from "src/components/shared/ToolbarProfile.vue";
 import ThemeSwitcher from "src/components/shared/DarkModeSwitcher.vue";
 
 const store = useMenuDrawer();
