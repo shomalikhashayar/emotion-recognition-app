@@ -9,10 +9,12 @@
       :class="$q.dark.isActive ? 'bg-dark' : 'bg-white'"
     >
       <div class="flex items-center">
-        <q-avatar size="24px" class="q-mr-md">
-          <img src="/icons/color-wheel.svg" alt="" />
-        </q-avatar>
-        <div class="text-size-16">شخصی سازی</div>
+        <div>
+          <q-avatar size="24px" class="q-mr-md">
+            <img src="/icons/color-wheel.svg" alt="" />
+          </q-avatar>
+        </div>
+        <span class="text-size-16 text-weight-300">شخصی سازی</span>
       </div>
     </q-btn>
   </q-page-sticky>

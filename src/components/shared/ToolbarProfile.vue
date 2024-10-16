@@ -18,7 +18,7 @@
         <q-item class="q-py-sm" clickable v-close-popup to="/profile">
           <q-item-section avatar>
             <q-avatar size="36px" class="bg-teritary">
-              <q-icon name="o_person" size="24px" />
+              <q-icon name="o_person" size="20px" />
             </q-avatar>
           </q-item-section>
           <q-item-section class="q-ml-none">
@@ -29,7 +29,7 @@
         <q-item class="q-py-sm" clickable v-close-popup to="/settings">
           <q-item-section avatar>
             <q-avatar size="36px" class="bg-teritary">
-              <q-icon name="o_settings" size="24px" />
+              <q-icon name="o_settings" size="20px" />
             </q-avatar>
           </q-item-section>
           <q-item-section>
@@ -42,7 +42,7 @@
         <q-item class="q-py-sm" clickable v-close-popup to="/account/login">
           <q-item-section avatar>
             <q-avatar size="36px" color="pink-6" text-color="white">
-              <q-icon name="o_logout" size="22px" />
+              <q-icon name="o_logout" size="18px" />
             </q-avatar>
           </q-item-section>
           <q-item-section>

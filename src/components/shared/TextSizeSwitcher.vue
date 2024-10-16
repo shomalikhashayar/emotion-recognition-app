@@ -15,6 +15,7 @@
         v-model="textSize"
         val="md"
         label="معمولی"
+        @click="setTextSize('md')"
       />
     </div>
     <div class="col">
@@ -30,8 +31,9 @@
         dense
         size="36px"
         v-model="textSize"
-        val="xl"
+        val="lg"
         label="درشت"
+        @click="setTextSize('lg')"
       />
     </div>
   </div>
@@ -42,19 +44,21 @@ import { ref, onMounted } from "vue";
 import { useQuasar } from "quasar";
 
 const $q = useQuasar();
-const textSize = ref("");
+const textSize = ref("md"); // Default value
 
 const setTextSize = (size) => {
-  textSize.value = size;
-  document.body.setAttribute("data-text-size", size);
-  document.cookie = `textSize=${size}; path=/; max-age=${60 * 60 * 24 * 30}`; // Save cookie for 30 days
+  textSize.value = size; // Update the text size
+  document.body.setAttribute("data-text-size", size); // Change body attribute
+  document.cookie = `textSize=${size}; path=/; max-age=${60 * 60 * 24 * 30}`; // Save cookie
 };
 
+// Load the text size from cookies on mounted
 onMounted(() => {
   const cookieValue = document.cookie.split('; ').find(row => row.startsWith('textSize='));
   if (cookieValue) {
     const size = cookieValue.split('=')[1];
-    setTextSize(size); 
+    textSize.value = size; // Set text size from cookie
+    document.body.setAttribute("data-text-size", size); // Update body attribute
   }
 });
 </script>
