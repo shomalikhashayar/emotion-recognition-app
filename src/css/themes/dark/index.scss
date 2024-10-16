@@ -5,5 +5,10 @@
   --q-dark: #{$dark-page};
   background-color: $dark-page;
 
+  // Custom
+  @include colors-dark();
   @include menu-drawer-dark();
+
+  // Quasar
+  @include q-drawer-dark();
 }

@@ -1,0 +1,6 @@
+@mixin q-drawer-dark {
+  .q-drawer--bordered {
+    border-right-color: #ffffff28 !important;
+    border-left-color: #ffffff28 !important;
+  }
+}

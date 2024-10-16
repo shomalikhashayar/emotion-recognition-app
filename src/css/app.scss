@@ -6,10 +6,14 @@
 
 // Light
 @import "/src/css/themes/light/custom/menu-drawer.scss";
+@import "/src/css/themes/light/custom/colors.scss";
+@import "/src/css/themes/light/quasar/q-drawer.scss";
 @import "/src/css/themes/light/index.scss";
 
 // Dark
 @import "/src/css/themes/dark/custom/menu-drawer.scss";
+@import "/src/css/themes/dark/custom/colors.scss";
+@import "/src/css/themes/dark/quasar/q-drawer.scss";
 @import "/src/css/themes/dark/index.scss";
 
 .body--light {
@@ -35,56 +39,3 @@
     @include theme-dark;
   }
 }
-
-// #menu-item {
-//   padding: 8px 4px;
-// }
-
-// .body--light {
-//   background: #fff4ea;
-// }
-
-// .body--light {
-//   .text-on-dark {
-//     color: $dark !important;
-//   }
-
-//   .bg-on-dark {
-//     background-color: white !important;
-//   }
-
-//   .active-gradient {
-//     background: linear-gradient(-90deg, #ffdfcd, #ffc4a5);
-//   }
-
-//   .q-drawer--bordered {
-//     border-right-color: #00000028 !important;
-//     border-left-color: #00000028 !important;
-//   }
-
-// }
-
-// .body--dark {
-//   background: $dark-page;
-//   --q-accent: $dark-page;
-// }
-
-// .body--dark {
-//   .text-on-dark {
-//     color: white !important;
-//   }
-
-//   .bg-on-dark {
-//     background-color: $dark !important;
-//   }
-
-//   .active-gradient {
-//     background: linear-gradient(-90deg, #ffdfcd, #ffc4a5);
-//   }
-
-//   .q-drawer--bordered {
-//     border-right-color: #ffffff28 !important;
-//     border-left-color: #ffffff28 !important;
-//   }
-
-// }

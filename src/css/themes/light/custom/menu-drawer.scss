@@ -2,4 +2,8 @@
   .drawer-gradient {
     background: linear-gradient(90deg, $accent, $accent);
   }
+
+  #menu-item {
+    padding: 8px 4px;
+  }
 }

@@ -3,7 +3,7 @@
     overlay
     side="right"
     bordered
-    width="350"
+    width="320"
     class="q-px-md q-pt-md"
     v-model="store.status.value"
   >

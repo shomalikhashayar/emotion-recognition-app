@@ -1,0 +1,13 @@
+@mixin colors-light {
+  .active-gradient {
+    background: linear-gradient(-90deg, #{$primary}40, #{$primary}60);
+  }
+
+  .text-on-dark {
+    color: $dark !important;
+  }
+
+  .bg-on-dark {
+    background-color: white !important;
+  }
+}

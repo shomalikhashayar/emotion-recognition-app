@@ -54,7 +54,7 @@ onMounted(() => {
   const cookieValue = document.cookie.split('; ').find(row => row.startsWith('textSize='));
   if (cookieValue) {
     const size = cookieValue.split('=')[1];
-    setTextSize(size); // Apply saved text size on mount
+    setTextSize(size); 
   }
 });
 </script>
