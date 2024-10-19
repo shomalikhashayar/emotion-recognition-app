@@ -1,5 +1,5 @@
 <template>
-  <q-page-sticky position="right" :offset="[-68, 500]">
+  <q-page-sticky style="z-index: 1" position="right" :offset="[-68, 500]">
     <q-btn
       unelevated
       :ripple="false"

@@ -33,7 +33,7 @@
             </q-avatar>
           </q-item-section>
           <q-item-section>
-            <q-item-label>تنظیمات</q-item-label>
+            <q-item-label class="text-size-16">تنظیمات</q-item-label>
           </q-item-section>
         </q-item>
 
