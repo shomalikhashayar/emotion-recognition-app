@@ -19,6 +19,6 @@ import CustomizationBtn from "src/components/MainLayout/customizationBtn.vue";
 
 <style lang="scss">
 .main-layout {
-  padding: 36px !important;
+  padding: 48px !important;
 }
 </style>

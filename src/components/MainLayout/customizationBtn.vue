@@ -3,7 +3,7 @@
     <q-btn
       unelevated
       :ripple="false"
-      class="customize no-letter-spacing rotate-90"
+      class="shadow customize no-letter-spacing rotate-90"
       padding="12px 24px"
       @click="store.toggle"
       :class="$q.dark.isActive ? 'bg-dark' : 'bg-white'"
