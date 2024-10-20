@@ -6,6 +6,7 @@
 
   // Custom
   @include colors-light();
+  @include shadows-light();
   @include menu-drawer-light();
 
   // Quasar

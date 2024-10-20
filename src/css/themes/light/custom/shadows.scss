@@ -1,0 +1,6 @@
+@mixin shadows-light {
+  .shadow {
+    box-shadow: 0 2px 8px 0 rgba(darken($primary, 20%), 0.2),
+      0 0 25px 0 rgba(darken($primary, 20%), 0.1) !important;
+  }
+}
