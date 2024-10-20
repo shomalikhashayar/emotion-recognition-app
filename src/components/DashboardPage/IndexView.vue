@@ -8,7 +8,7 @@
           </q-avatar>
         </q-item-section>
         <q-item-section>
-          <q-item-label class="text-h6 text-weight-700 q-mb-xs">
+          <q-item-label class="text-size-21 text-weight-700 q-mb-xs">
             نمودار احساسات
           </q-item-label>
         </q-item-section>
@@ -103,7 +103,7 @@ function setOption() {
       textStyle: {
         color: $q.dark.isActive ? "white" : "black",
         fontFamily: "vazir-thin",
-        fontSize: 14,
+        fontSize: 16,
         align: $q.lang.rtl ? "right" : "left",
       },
       axisPointer: {
@@ -119,7 +119,7 @@ function setOption() {
       textStyle: {
         color: $q.dark.isActive ? "white" : "black",
         fontFamily: "vazir-thin",
-        fontSize: 14,
+        fontSize: 16,
       },
       icon: "circle",
       itemWidth: 12,

@@ -13,6 +13,7 @@
       dense
       unelevated
       label="خشایار شمالی"
+      class="text-size-16"
     >
       <q-list style="width: 250px">
         <q-item class="q-py-sm" clickable v-close-popup to="/profile">
