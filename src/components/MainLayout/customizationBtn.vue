@@ -14,7 +14,9 @@
             <img src="/icons/color-wheel.svg" alt="" />
           </q-avatar>
         </div>
-        <span class="text-size-16 text-weight-300">شخصی سازی</span>
+        <span class="text-body1 no-letter-spacing text-weight-300"
+          >شخصی سازی</span
+        >
       </div>
     </q-btn>
   </q-page-sticky>

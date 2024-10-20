@@ -1,6 +1,6 @@
 <template>
   <q-card flat class="border-radius-xl bordered shadow">
-    <q-card-section class="q-pt-lg q-px-lg">
+    <q-card-section class="q-pt-lg q-pb-none q-px-lg">
       <q-item class="no-padding">
         <q-item-section avatar>
           <q-avatar round text-color="white" size="lg" color="primary">
@@ -16,7 +16,7 @@
     </q-card-section>
 
     <v-chart
-      :style="$q.lang.rtl ? 'direction: ltr' : 'direction: rtl'"
+      :style="$q.lang.rtl ? 'direction: ltr' : ''"
       class="chart border-radius-inherit overflow-hidden"
       :option="option"
       autoresize
@@ -58,42 +58,62 @@ const option = ref(null);
 
 const chartData = ref({
   labels: [
-    "1401/05/10",
-    "1401/05/11",
-    "1401/05/12",
-    "1401/05/13",
-    "1401/05/14",
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند",
   ],
   series: [
-    [30, 12, 9, 0, 43], // شادی
-    [70, 102, 90, 40, 430], // غم
-    [20, 2, 0, 7, 6], // نفرت
-    [11, 17, 10, 10, 10], // خشم
-    [8, 4, 23, 12, 9], // عشق
-    [8, 3, 8, 1, 2], // ترس
+    [30, 12, 9, 80, 43, 12, 6, 0, 7, 2, 20, 81], // شادی
+    [11, 17, 10, 11, 17, 10, 10, 20, 10, 10, 50, 3], // خشم
+    [40, 12, 9, 40, 10, 0, 12, 90, 40, 4, 9, 22], // غم
+    [40, 12, 0, 0, 10, 4, 80, 3, 8, 1, 20, 9], // ترس
+    [80, 3, 8, 1, 20, 42, 2, 21, 2, 10, 12, 12], // تعجب
+    [20, 20, 40, 7, 6, 2, 3, 0, 29, 11, 1, 80], // نفرت
   ],
 });
 
-// Change the color for شادی to green
 const colors = [
   "#00943E", // شادی
   "#FF3F3F", // خشم
   "#FF8746", // غم
-  "#FF8000", // ترس
+  "#575757", // ترس
   "#7940FF", // تعجب
   "#D8DE1D", // نفرت
 ];
 
 function setOption() {
   option.value = {
-    color: ["#00943E", "#FF3F3F", "#FF8746", "#FF8000", "#7940FF", "#D8DE1D"],
+    color: ["#00943E", "#FF3F3F", "#FF8746", "#575757", "#7940FF", "#D8DE1D"],
     tooltip: {
+      extraCssText:
+        "box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); border-radius:12px;",
+      icon: "roundRect",
+      backgroundColor: $q.dark.isActive ? "var(--q-dark)" : "white",
+      className: "tooltip",
+      padding: 12,
       textStyle: {
         color: $q.dark.isActive ? "white" : "black",
         fontFamily: "vazir-thin",
         fontSize: 14,
+        align: $q.lang.rtl ? "right" : "left",
+      },
+      axisPointer: {
+        lineStyle: {
+          color: $q.dark.isActive ? "#ffffff27" : "#00000027",
+          width: 2,
+        },
       },
       trigger: "axis",
+      formatter: getFormatter(),
     },
     legend: {
       textStyle: {
@@ -101,6 +121,9 @@ function setOption() {
         fontFamily: "vazir-thin",
         fontSize: 14,
       },
+      icon: "circle",
+      itemWidth: 12,
+      itemGap: 32,
       top: "0",
       data: ["نفرت", "تعجب", "ترس", "غم", "خشم", "شادی"],
     },
@@ -108,11 +131,11 @@ function setOption() {
       left: "0",
       right: "0",
       bottom: "0",
-      top: "100px",
       containLabel: false,
     },
     xAxis: [
       {
+        show: false,
         type: "category",
         boundaryGap: false,
         data: chartData.value.labels,
@@ -121,20 +144,24 @@ function setOption() {
     yAxis: [
       {
         type: "value",
+        splitLine: {
+          show: false,
+        },
       },
     ],
     series: chartData.value.series.map((data, index) => ({
       name: ["شادی", "خشم", "غم", "ترس", "تعجب", "نفرت"][index],
       type: "line",
-      stack: "Total",
       lineStyle: {
-        width: 2,
-        color: colors[index % colors.length], // Color for the line
+        width: 3,
+        color: colors[index % colors.length],
       },
+      symbolSize: 12,
+      symbol: $q.dark.isActive ? "circle" : "emptyCircle",
       smooth: true,
       showSymbol: false,
       areaStyle: {
-        opacity: 0.3,
+        opacity: 1,
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
@@ -144,7 +171,7 @@ function setOption() {
             offset: 1,
             color: echarts.color.modifyAlpha(
               colors[index % colors.length],
-              0.5
+              0.1
             ),
           },
         ]),
@@ -157,6 +184,49 @@ function setOption() {
   };
 }
 
+const ltrFormatter = (params) => {
+  const header = params[0].name;
+  const seriesData = params
+    .map((item) => {
+      return `<div style="margin-bottom: 8px; display: flex; align-items: center;">
+                ${item.marker}
+                <span class="text-weight-300" style="margin-left: 8px;">${item.seriesName}</span>: 
+                <span class="text-bold" style="margin-left: 4px;">${item.data}</span>
+              </div>`;
+    })
+    .join("");
+
+  return `
+    <div style="min-width: 150px;">
+      <strong style="display: block; padding-bottom: 12px;">${header}</strong>
+      <div class="text-weight-300">${seriesData}</div>
+    </div>
+  `;
+};
+
+const rtlFormatter = (params) => {
+  const header = params[0].name;
+  const seriesData = params
+    .map((item) => {
+      return `<div style="margin-bottom: 8px; display: flex; align-items: center; direction: rtl;">
+               ${item.marker} <span class="text-weight-300" style="margin-right: 8px;">${item.seriesName}</span>: 
+                <span class="text-bold" style="margin-right: 4px;">${item.data}</span>
+              </div>`;
+    })
+    .join("");
+
+  return `
+    <div style="min-width: 150px;">
+      <strong style="display: block; padding-bottom: 12px; direction: rtl;">${header}</strong>
+      <div class="text-weight-300" style="direction: rtl;">${seriesData}</div>
+    </div>
+  `;
+};
+
+const getFormatter = () => {
+  return $q.lang.rtl ? rtlFormatter : ltrFormatter;
+};
+
 watch(() => {
   setOption();
 });
@@ -166,8 +236,8 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .chart {
-  height: 40vh;
+  height: 45vh;
 }
 </style>
